@@ -1,3 +1,4 @@
+import 'package:films_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -5,8 +6,8 @@ import 'package:provider/provider.dart';
 class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignInBloc, SignInState>(listener: (context, state) {
-      state.authFailureOrSuccesOption.fold(
+    return BlocConsumer<SignInFormBloc, SignInFormState>(listener: (context, state) {
+      state.authFailureOrSuccessOption.fold(
           () {},
           (either) => either.fold((failure) {
                 //Scaffold.of(context).showSnackBar(SnackBar(content: Text('test')))
@@ -44,10 +45,10 @@ class SignInForm extends StatelessWidget {
                 ),
                 autocorrect: false,
                 onChanged: (value) => context
-                    .read<SignInBloc>()
-                    .add(SignInFromEvent.emailChanged(value)),
+                    .read<SignInFormBloc>()
+                    .add(SignInFormEvent.emailChanged(value)),
                 validator: (_) => context
-                    .read<SignInBloc>()
+                    .read<SignInFormBloc>()
                     .state
                     .emailAddress
                     .value
@@ -68,10 +69,10 @@ class SignInForm extends StatelessWidget {
                 autocorrect: false,
                 obscureText: true,
                 onChanged: (value) => context
-                    .read<SignInBloc>()
-                    .add(SignInFromEvent.passwordChanged(value)),
+                    .read<SignInFormBloc>()
+                    .add(SignInFormEvent.passwordChanged(value)),
                 validator: (_) => context
-                    .read<SignInBloc>()
+                    .read<SignInFormBloc>()
                     .state
                     .password
                     .value
@@ -88,7 +89,7 @@ class SignInForm extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    context.read<SignInBloc>().add(const SignInFromEvent
+                    context.read<SignInFormBloc>().add(const SignInFormEvent
                         .signInWithEmailAndPasswordPressed());
                   },
                   style: ButtonStyle(
@@ -98,7 +99,7 @@ class SignInForm extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    context.read<SignInBloc>().add(const SignInFromEvent
+                    context.read<SignInFormBloc>().add(const SignInFormEvent
                         .registerWithEmailAndPasswordPressed());
                   },
                   style: ButtonStyle(
@@ -109,15 +110,15 @@ class SignInForm extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     context
-                        .read<SignInBloc>()
-                        .add(const SignInFromEvent.signInWithGooglePressed());
+                        .read<SignInFormBloc>()
+                        .add(const SignInFormEvent.signInWithGooglePressed());
                   },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.green),
                       foregroundColor: MaterialStateProperty.all(Colors.black)),
                   child: const Text('Google'),
                 ),
-                if (state.isSubmiting) ...[
+                if (state.isSubmitting) ...[
                   const SizedBox(
                     height: 8,
                   ),

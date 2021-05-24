@@ -1,3 +1,4 @@
+import 'package:films_app/application/auth/sign_in_form/auth_bloc/auth_bloc.dart';
 import 'package:films_app/presentation/pages/sign_in_page.dart';
 import 'package:films_app/presentation/pages/splash_page.dart';
 import 'package:films_app/presentation/pages/user_films_page.dart';

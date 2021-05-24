@@ -150,8 +150,7 @@ class __$FilmItemDtoCopyWithImpl<$Res> extends _$FilmItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FilmItemDto implements _FilmItemDto {
   const _$_FilmItemDto(
-      {
-      required this.id,
+      {required this.id,
       required this.title,
       required this.grade,
       required this.description});
@@ -159,6 +158,13 @@ class _$_FilmItemDto implements _FilmItemDto {
   factory _$_FilmItemDto.fromJson(Map<String, dynamic> json) =>
       _$_$_FilmItemDtoFromJson(json);
 
+   Film toDomain() {
+    return Film(
+        id: UniqueId.fromUniqueString(id),
+        title: FilmTitle(title),
+        description: FilmDesc(description),
+        grade: FilmGrade(grade));
+  }
   @override
   final String id;
   @override
@@ -186,15 +192,6 @@ class _$_FilmItemDto implements _FilmItemDto {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)));
-  }
-
-  @override
-  Film toDomain() {
-    return Film(
-        id: UniqueId.fromUniqueString(id),
-        title: FilmTitle(title),
-        description: FilmDesc(description),
-        grade: FilmGrade(grade));
   }
 
   @override
