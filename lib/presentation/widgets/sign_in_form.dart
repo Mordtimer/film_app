@@ -1,3 +1,4 @@
+import 'package:films_app/application/auth/sign_in_form/auth_bloc/auth_bloc.dart';
 import 'package:films_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,10 @@ class SignInForm extends StatelessWidget {
                                 'Invalid password or mail')),
                       ],
                     )));
-              }, (r) => null));
+              }, (_){
+                Navigator.pushNamed(context, '/filmspage');
+                context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
+              }));
     }, builder: (context, state) {
       return Form(
         autovalidateMode: AutovalidateMode.always,
@@ -95,7 +99,7 @@ class SignInForm extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.green),
                       foregroundColor: MaterialStateProperty.all(Colors.black)),
-                  child: const Text('SIGN IN'),
+                  child: const Text('Sign In'),
                 ),
                 TextButton(
                   onPressed: () {
@@ -105,7 +109,7 @@ class SignInForm extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.green),
                       foregroundColor: MaterialStateProperty.all(Colors.black)),
-                  child: const Text('REGISTER'),
+                  child: const Text('Register'),
                 ),
                 TextButton(
                   onPressed: () {
