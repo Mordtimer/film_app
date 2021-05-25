@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:films_app/domain/auth/unique_id.dart';
+import 'package:films_app/domain/core/failures.dart';
 import 'package:films_app/domain/films/film_desc.dart';
 import 'package:films_app/domain/films/film_grade.dart';
 import 'package:flutter/foundation.dart';
@@ -9,7 +11,9 @@ import 'film_title.dart';
 part 'film.freezed.dart';
 
 @freezed
-abstract class Film with _$Film {
+class Film with _$Film {
+
+  const Film._();
   const factory Film(
       {required UniqueId id,
       required FilmTitle title,
@@ -21,4 +25,11 @@ abstract class Film with _$Film {
       title: FilmTitle(''),
       grade: FilmGrade('5'),
       id: UniqueId());
+
+  Option<ValueFailure<dynamic>> get failureOption {
+    return title.failureOrUnit
+        .andThen(description.failureOrUnit)
+        .andThen(grade.failureOrUnit)
+        .fold((l) => some(l), (r) => none());
+  }
 }

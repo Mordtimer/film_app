@@ -136,12 +136,13 @@ class __$FilmCopyWithImpl<$Res> extends _$FilmCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Film with DiagnosticableTreeMixin implements _Film {
+class _$_Film extends _Film with DiagnosticableTreeMixin {
   const _$_Film(
       {required this.id,
       required this.title,
       required this.description,
-      required this.grade});
+      required this.grade})
+      : super._();
 
   @override
   final UniqueId id;
@@ -197,12 +198,13 @@ class _$_Film with DiagnosticableTreeMixin implements _Film {
       __$FilmCopyWithImpl<_Film>(this, _$identity);
 }
 
-abstract class _Film implements Film {
+abstract class _Film extends Film {
   const factory _Film(
       {required UniqueId id,
       required FilmTitle title,
       required FilmDesc description,
       required FilmGrade grade}) = _$_Film;
+  const _Film._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;

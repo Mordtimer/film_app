@@ -43,6 +43,23 @@ class FilmFormBloc extends Bloc<FilmFormEvent, FilmFormState> {
         film: state.film.copyWith(grade: FilmGrade(e.grade)),
         saveFailureOrSuccessOption: none(),
       );
-    });
+    }, saved: (e) async*{ 
+      Either<FilmFailure, Unit>? failureOrSuccess;
+
+      yield state.copyWith(
+        isSaving: true,
+        saveFailureOrSuccessOption: none(),
+      );
+
+      if(state.film.failureOption.isNone()){
+        failureOrSuccess = state.isEditing ? await _filmRepository.update(state.film) : await _filmRepository.create(state.film);
+      }
+
+      yield state.copyWith(
+        isSaving: false,
+        showErrorMessages: true,
+        saveFailureOrSuccessOption: optionOf(failureOrSuccess)
+      );
+     });
   }
 }

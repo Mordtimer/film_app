@@ -7,4 +7,5 @@ class FilmFormEvent with _$FilmFormEvent {
   const factory FilmFormEvent.titleChanged(String title) = _TitleChanged;
   const factory FilmFormEvent.descriptionChanged(String desc) = _DescriptionChanged;
   const factory FilmFormEvent.gradeChanged(String grade) = _GradeChanged;
+  const factory FilmFormEvent.saved() = _Saved;
 }

@@ -39,6 +39,10 @@ class _$FilmFormEventTearOff {
       grade,
     );
   }
+
+  _Saved saved() {
+    return const _Saved();
+  }
 }
 
 /// @nodoc
@@ -52,6 +56,7 @@ mixin _$FilmFormEvent {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +65,7 @@ mixin _$FilmFormEvent {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? saved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +75,7 @@ mixin _$FilmFormEvent {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_Saved value) saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +84,7 @@ mixin _$FilmFormEvent {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,6 +177,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() saved,
   }) {
     return initialized(initialFilmOption);
   }
@@ -180,6 +189,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? saved,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -195,6 +205,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_Saved value) saved,
   }) {
     return initialized(this);
   }
@@ -206,6 +217,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -293,6 +305,7 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() saved,
   }) {
     return titleChanged(title);
   }
@@ -304,6 +317,7 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? saved,
     required TResult orElse(),
   }) {
     if (titleChanged != null) {
@@ -319,6 +333,7 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_Saved value) saved,
   }) {
     return titleChanged(this);
   }
@@ -330,6 +345,7 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
     if (titleChanged != null) {
@@ -417,6 +433,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() saved,
   }) {
     return descriptionChanged(desc);
   }
@@ -428,6 +445,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? saved,
     required TResult orElse(),
   }) {
     if (descriptionChanged != null) {
@@ -443,6 +461,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_Saved value) saved,
   }) {
     return descriptionChanged(this);
   }
@@ -454,6 +473,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
     if (descriptionChanged != null) {
@@ -541,6 +561,7 @@ class _$_GradeChanged implements _GradeChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() saved,
   }) {
     return gradeChanged(grade);
   }
@@ -552,6 +573,7 @@ class _$_GradeChanged implements _GradeChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? saved,
     required TResult orElse(),
   }) {
     if (gradeChanged != null) {
@@ -567,6 +589,7 @@ class _$_GradeChanged implements _GradeChanged {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_Saved value) saved,
   }) {
     return gradeChanged(this);
   }
@@ -578,6 +601,7 @@ class _$_GradeChanged implements _GradeChanged {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
     if (gradeChanged != null) {
@@ -594,6 +618,101 @@ abstract class _GradeChanged implements FilmFormEvent {
   @JsonKey(ignore: true)
   _$GradeChangedCopyWith<_GradeChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SavedCopyWith<$Res> {
+  factory _$SavedCopyWith(_Saved value, $Res Function(_Saved) then) =
+      __$SavedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SavedCopyWithImpl<$Res> extends _$FilmFormEventCopyWithImpl<$Res>
+    implements _$SavedCopyWith<$Res> {
+  __$SavedCopyWithImpl(_Saved _value, $Res Function(_Saved) _then)
+      : super(_value, (v) => _then(v as _Saved));
+
+  @override
+  _Saved get _value => super._value as _Saved;
+}
+
+/// @nodoc
+
+class _$_Saved implements _Saved {
+  const _$_Saved();
+
+  @override
+  String toString() {
+    return 'FilmFormEvent.saved()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Saved);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Film> initialFilmOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String desc) descriptionChanged,
+    required TResult Function(String grade) gradeChanged,
+    required TResult Function() saved,
+  }) {
+    return saved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Film> initialFilmOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String desc)? descriptionChanged,
+    TResult Function(String grade)? gradeChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (saved != null) {
+      return saved();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return saved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (saved != null) {
+      return saved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Saved implements FilmFormEvent {
+  const factory _Saved() = _$_Saved;
 }
 
 /// @nodoc
