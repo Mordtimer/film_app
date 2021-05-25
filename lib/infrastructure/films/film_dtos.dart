@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:films_app/domain/auth/unique_id.dart';
 import 'package:films_app/domain/films/film.dart';
 import 'package:films_app/domain/films/film_desc.dart';
-import 'package:films_app/domain/films/film_garde.dart';
+import 'package:films_app/domain/films/film_grade.dart';
 import 'package:films_app/domain/films/film_title.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'film_dtos.freezed.dart';

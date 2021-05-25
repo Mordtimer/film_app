@@ -1,6 +1,6 @@
 import 'package:films_app/domain/auth/unique_id.dart';
 import 'package:films_app/domain/films/film_desc.dart';
-import 'package:films_app/domain/films/film_garde.dart';
+import 'package:films_app/domain/films/film_grade.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
