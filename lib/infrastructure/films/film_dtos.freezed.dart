@@ -158,13 +158,6 @@ class _$_FilmItemDto implements _FilmItemDto {
   factory _$_FilmItemDto.fromJson(Map<String, dynamic> json) =>
       _$_$_FilmItemDtoFromJson(json);
 
-   Film toDomain() {
-    return Film(
-        id: UniqueId.fromUniqueString(id),
-        title: FilmTitle(title),
-        description: FilmDesc(description),
-        grade: FilmGrade(grade));
-  }
   @override
   final String id;
   @override

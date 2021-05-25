@@ -5,7 +5,6 @@ import 'film_failure.dart';
 
 abstract class IFilmRepository {
   Stream<Either<FilmFailure, List<Film>>> watchAll();
-  Stream<Either<FilmFailure, List<Film>>> watchUncompleted();
   Future<Either<FilmFailure, Unit>> create(Film film);
   Future<Either<FilmFailure, Unit>> delete(Film film);
   Future<Either<FilmFailure, Unit>> update(Film film);
