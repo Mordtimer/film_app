@@ -23,6 +23,22 @@ class UserFilmPage extends StatelessWidget {
                 unauthenticated: (_) => Navigator.pushNamedAndRemoveUntil(
                     context, '/login', (route) => false),
                 orElse: () {}),
+          ),
+          BlocListener<FilmActorBloc, FilmActorState>(
+            listener: (context, state) {
+              state.maybeMap(
+                  orElse: () {},
+                  deleteFailure: (state) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      duration: const Duration(seconds: 5),
+                      content: Text(state.filmFailure.map(
+                          unexpected: (_) => 'Unexpected Error. Please contact app creator.',
+                          insufficientPremission: (_) =>
+                              'You have no premission to do this!',
+                          notFound: (_) => 'Note not found')),
+                    ));
+                  });
+            },
           )
         ],
         child: Scaffold(
