@@ -9,12 +9,11 @@ class SplashPage extends StatelessWidget {
       listener: (context, state) {
         state.map(
           initial: (_) {},
-          authenticated: (_) =>/*
-              AutoRouter.of(context).replace(UserFilmPageRoute()),*/
-              Navigator.pushNamed(context, '/filmspage'),
+          authenticated: (_) =>
+              Navigator.pushNamedAndRemoveUntil(context, '/filmspage', (route) => false),
 
           unauthenticated: (_) =>
-              Navigator.pushNamed(context, '/login'),
+              Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false),
         );
       },
       child: const Scaffold(

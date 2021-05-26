@@ -11,7 +11,6 @@ class Password extends ValueObject {
   const Password._(this.value);
 
   factory Password(String input) {
-    assert(input != null);
     return Password._(
       validatePassword(input),
     );

@@ -27,7 +27,7 @@ class SignInForm extends StatelessWidget {
                       ],
                     )));
               }, (_){
-                Navigator.pushNamed(context, '/filmspage');
+                Navigator.pushNamedAndRemoveUntil(context, '/filmspage', (route) => false);
                 context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
               }));
     }, builder: (context, state) {
