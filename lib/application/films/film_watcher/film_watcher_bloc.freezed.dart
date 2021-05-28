@@ -301,9 +301,9 @@ class _$FilmWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSucces loadSucces(List<Film> film) {
+  _LoadSucces loadSucces(List<Film> films) {
     return _LoadSucces(
-      film,
+      films,
     );
   }
 
@@ -323,7 +323,7 @@ mixin _$FilmWatcherState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Film> film) loadSucces,
+    required TResult Function(List<Film> films) loadSucces,
     required TResult Function(FilmFailure filmFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -331,7 +331,7 @@ mixin _$FilmWatcherState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Film> film)? loadSucces,
+    TResult Function(List<Film> films)? loadSucces,
     TResult Function(FilmFailure filmFailure)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -411,7 +411,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Film> film) loadSucces,
+    required TResult Function(List<Film> films) loadSucces,
     required TResult Function(FilmFailure filmFailure) loadFailure,
   }) {
     return initial();
@@ -422,7 +422,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Film> film)? loadSucces,
+    TResult Function(List<Film> films)? loadSucces,
     TResult Function(FilmFailure filmFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -505,7 +505,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Film> film) loadSucces,
+    required TResult Function(List<Film> films) loadSucces,
     required TResult Function(FilmFailure filmFailure) loadFailure,
   }) {
     return loadInProgress();
@@ -516,7 +516,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Film> film)? loadSucces,
+    TResult Function(List<Film> films)? loadSucces,
     TResult Function(FilmFailure filmFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -562,7 +562,7 @@ abstract class _$LoadSuccesCopyWith<$Res> {
   factory _$LoadSuccesCopyWith(
           _LoadSucces value, $Res Function(_LoadSucces) then) =
       __$LoadSuccesCopyWithImpl<$Res>;
-  $Res call({List<Film> film});
+  $Res call({List<Film> films});
 }
 
 /// @nodoc
@@ -578,12 +578,12 @@ class __$LoadSuccesCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? film = freezed,
+    Object? films = freezed,
   }) {
     return _then(_LoadSucces(
-      film == freezed
-          ? _value.film
-          : film // ignore: cast_nullable_to_non_nullable
+      films == freezed
+          ? _value.films
+          : films // ignore: cast_nullable_to_non_nullable
               as List<Film>,
     ));
   }
@@ -592,27 +592,27 @@ class __$LoadSuccesCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSucces implements _LoadSucces {
-  const _$_LoadSucces(this.film);
+  const _$_LoadSucces(this.films);
 
   @override
-  final List<Film> film;
+  final List<Film> films;
 
   @override
   String toString() {
-    return 'FilmWatcherState.loadSucces(film: $film)';
+    return 'FilmWatcherState.loadSucces(films: $films)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSucces &&
-            (identical(other.film, film) ||
-                const DeepCollectionEquality().equals(other.film, film)));
+            (identical(other.films, films) ||
+                const DeepCollectionEquality().equals(other.films, films)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(film);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(films);
 
   @JsonKey(ignore: true)
   @override
@@ -624,10 +624,10 @@ class _$_LoadSucces implements _LoadSucces {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Film> film) loadSucces,
+    required TResult Function(List<Film> films) loadSucces,
     required TResult Function(FilmFailure filmFailure) loadFailure,
   }) {
-    return loadSucces(film);
+    return loadSucces(films);
   }
 
   @override
@@ -635,12 +635,12 @@ class _$_LoadSucces implements _LoadSucces {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Film> film)? loadSucces,
+    TResult Function(List<Film> films)? loadSucces,
     TResult Function(FilmFailure filmFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSucces != null) {
-      return loadSucces(film);
+      return loadSucces(films);
     }
     return orElse();
   }
@@ -673,9 +673,9 @@ class _$_LoadSucces implements _LoadSucces {
 }
 
 abstract class _LoadSucces implements FilmWatcherState {
-  const factory _LoadSucces(List<Film> film) = _$_LoadSucces;
+  const factory _LoadSucces(List<Film> films) = _$_LoadSucces;
 
-  List<Film> get film => throw _privateConstructorUsedError;
+  List<Film> get films => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadSuccesCopyWith<_LoadSucces> get copyWith =>
       throw _privateConstructorUsedError;
@@ -758,7 +758,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Film> film) loadSucces,
+    required TResult Function(List<Film> films) loadSucces,
     required TResult Function(FilmFailure filmFailure) loadFailure,
   }) {
     return loadFailure(filmFailure);
@@ -769,7 +769,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Film> film)? loadSucces,
+    TResult Function(List<Film> films)? loadSucces,
     TResult Function(FilmFailure filmFailure)? loadFailure,
     required TResult orElse(),
   }) {

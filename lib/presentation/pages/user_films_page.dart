@@ -1,6 +1,7 @@
 import 'package:films_app/application/auth/sign_in_form/auth_bloc/auth_bloc.dart';
 import 'package:films_app/application/films/film_actor/film_actor_bloc.dart';
 import 'package:films_app/application/films/film_watcher/film_watcher_bloc.dart';
+import 'package:films_app/presentation/pages/films_overview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -42,6 +43,7 @@ class UserFilmPage extends StatelessWidget {
           )
         ],
         child: Scaffold(
+          body: FilmsOverview(),
           appBar: AppBar(
             leading: IconButton(
                 icon: Icon(Icons.logout),

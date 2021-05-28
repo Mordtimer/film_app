@@ -14,5 +14,5 @@ extension FirestoreX on FirebaseFirestore {
 }
 
 extension DocumentReferenceX on DocumentReference {
-  CollectionReference get filmCollection => collection('notes');
+  CollectionReference get filmCollection => collection('films');
 }

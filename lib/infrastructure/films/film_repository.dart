@@ -72,12 +72,12 @@ class FilmReposiory implements IFilmRepository {
   @override
   Stream<Either<FilmFailure, List<Film>>> watchAll() async* {
     final userDoc = await _firestore.userDocument();
-    userDoc.filmCollection
-        .snapshots()
-        .map(
+  
+ 
+    yield* userDoc.filmCollection.snapshots().map(
           (snapshot) => right<FilmFailure, List<Film>>(
             snapshot.docs
-                .map((doc) => FilmItemDto.fromFirestore(
+                            .map((doc) => FilmItemDto.fromFirestore(
                         doc as QueryDocumentSnapshot<Map<String, dynamic>>)
                     .toDomain())
                 .toList(),

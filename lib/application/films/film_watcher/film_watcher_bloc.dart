@@ -23,8 +23,9 @@ class FilmWatcherBloc extends Bloc<FilmWatcherEvent, FilmWatcherState> {
   ) async* {
     yield* event.map(watchAllStarted: (e) async* {
       yield const FilmWatcherState.loadInProgress();
-      _filmStreamSubscribtion = _filmRepository.watchAll().listen((failureOrFilms) =>
-          add(FilmWatcherEvent.filmsRecived(failureOrFilms)));
+      _filmStreamSubscribtion = _filmRepository.watchAll().listen(
+          (failureOrFilms) =>
+              add(FilmWatcherEvent.filmsRecived(failureOrFilms)));
     }, filmsRecived: (_FilmsRecived e) async* {
       yield e.failureOrFilms.fold((l) => FilmWatcherState.loadFailure(l),
           (films) => FilmWatcherState.loadSucces(films));
@@ -33,7 +34,7 @@ class FilmWatcherBloc extends Bloc<FilmWatcherEvent, FilmWatcherState> {
 
   @override
   Future<void> close() {
-    _filmStreamSubscribtion?.pause();
+    //_filmStreamSubscribtion?.pause();
     return super.close();
   }
 }
