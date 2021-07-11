@@ -1,4 +1,5 @@
 import 'package:films_app/application/films/film_watcher/film_watcher_bloc.dart';
+import 'package:films_app/presentation/widgets/film_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,17 +18,17 @@ class FilmsOverview extends StatelessWidget {
               itemBuilder: (context, index) {
               final film = state.films[index];
               if (film.failureOption.isSome()) {
-                return Container(
-                  color: Colors.red,
-                  width: 200,
-                  height: 30,
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    color: Colors.yellow,
+                    width: 200,
+                    height: 30,
+                  ),
                 );
               } else {
-                return Container(
-                  color: Colors.green,
-                  width: 300,
-                  height: 30,
-                );
+                return FilmCard(film: film);
+                
               }
             })
             ;

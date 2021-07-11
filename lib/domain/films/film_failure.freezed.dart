@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$FilmFailureTearOff {
   const _$FilmFailureTearOff();
 
-  _Unexpected unexpected() {
-    return const _Unexpected();
+  _Unexpected unexpected({required Object object}) {
+    return _Unexpected(
+      object: object,
+    );
   }
 
   _InsufficientPremission insufficientPremission() {
@@ -36,14 +38,14 @@ const $FilmFailure = _$FilmFailureTearOff();
 mixin _$FilmFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
+    required TResult Function(Object object) unexpected,
     required TResult Function() insufficientPremission,
     required TResult Function() notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
+    TResult Function(Object object)? unexpected,
     TResult Function()? insufficientPremission,
     TResult Function()? notFound,
     required TResult orElse(),
@@ -88,6 +90,7 @@ abstract class _$UnexpectedCopyWith<$Res> {
   factory _$UnexpectedCopyWith(
           _Unexpected value, $Res Function(_Unexpected) then) =
       __$UnexpectedCopyWithImpl<$Res>;
+  $Res call({Object object});
 }
 
 /// @nodoc
@@ -99,46 +102,70 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$FilmFailureCopyWithImpl<$Res>
 
   @override
   _Unexpected get _value => super._value as _Unexpected;
+
+  @override
+  $Res call({
+    Object? object = freezed,
+  }) {
+    return _then(_Unexpected(
+      object: object == freezed
+          ? _value.object
+          : object // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Unexpected implements _Unexpected {
-  const _$_Unexpected();
+  const _$_Unexpected({required this.object});
+
+  @override
+  final Object object;
 
   @override
   String toString() {
-    return 'FilmFailure.unexpected()';
+    return 'FilmFailure.unexpected(object: $object)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unexpected);
+    return identical(this, other) ||
+        (other is _Unexpected &&
+            (identical(other.object, object) ||
+                const DeepCollectionEquality().equals(other.object, object)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(object);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+      __$UnexpectedCopyWithImpl<_Unexpected>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
+    required TResult Function(Object object) unexpected,
     required TResult Function() insufficientPremission,
     required TResult Function() notFound,
   }) {
-    return unexpected();
+    return unexpected(object);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
+    TResult Function(Object object)? unexpected,
     TResult Function()? insufficientPremission,
     TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
-      return unexpected();
+      return unexpected(object);
     }
     return orElse();
   }
@@ -170,7 +197,12 @@ class _$_Unexpected implements _Unexpected {
 }
 
 abstract class _Unexpected implements FilmFailure {
-  const factory _Unexpected() = _$_Unexpected;
+  const factory _Unexpected({required Object object}) = _$_Unexpected;
+
+  Object get object => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -213,7 +245,7 @@ class _$_InsufficientPremission implements _InsufficientPremission {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
+    required TResult Function(Object object) unexpected,
     required TResult Function() insufficientPremission,
     required TResult Function() notFound,
   }) {
@@ -223,7 +255,7 @@ class _$_InsufficientPremission implements _InsufficientPremission {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
+    TResult Function(Object object)? unexpected,
     TResult Function()? insufficientPremission,
     TResult Function()? notFound,
     required TResult orElse(),
@@ -301,7 +333,7 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
+    required TResult Function(Object object) unexpected,
     required TResult Function() insufficientPremission,
     required TResult Function() notFound,
   }) {
@@ -311,7 +343,7 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
+    TResult Function(Object object)? unexpected,
     TResult Function()? insufficientPremission,
     TResult Function()? notFound,
     required TResult orElse(),

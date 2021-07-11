@@ -52,6 +52,12 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  NotAnUrl<T> notAnUrl<T>({required T failedValue}) {
+    return NotAnUrl<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -69,6 +75,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +86,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -90,6 +98,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,6 +109,7 @@ mixin _$ValueFailure<T> {
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -223,6 +233,7 @@ class _$InvalidEmail<T>
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) {
     return invalidEmail(failedValue);
   }
@@ -236,6 +247,7 @@ class _$InvalidEmail<T>
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -253,6 +265,7 @@ class _$InvalidEmail<T>
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) {
     return invalidEmail(this);
   }
@@ -266,6 +279,7 @@ class _$InvalidEmail<T>
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -370,6 +384,7 @@ class _$InvalidPassword<T>
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) {
     return invalidPassword(failedValue);
   }
@@ -383,6 +398,7 @@ class _$InvalidPassword<T>
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -400,6 +416,7 @@ class _$InvalidPassword<T>
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) {
     return invalidPassword(this);
   }
@@ -413,6 +430,7 @@ class _$InvalidPassword<T>
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -513,6 +531,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) {
     return empty(failedValue);
   }
@@ -526,6 +545,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -543,6 +563,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) {
     return empty(this);
   }
@@ -556,6 +577,7 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -670,6 +692,7 @@ class _$TextToLong<T> with DiagnosticableTreeMixin implements TextToLong<T> {
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) {
     return textTooLong(failedValue, max);
   }
@@ -683,6 +706,7 @@ class _$TextToLong<T> with DiagnosticableTreeMixin implements TextToLong<T> {
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) {
     if (textTooLong != null) {
@@ -700,6 +724,7 @@ class _$TextToLong<T> with DiagnosticableTreeMixin implements TextToLong<T> {
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) {
     return textTooLong(this);
   }
@@ -713,6 +738,7 @@ class _$TextToLong<T> with DiagnosticableTreeMixin implements TextToLong<T> {
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) {
     if (textTooLong != null) {
@@ -817,6 +843,7 @@ class _$MultiLine<T> with DiagnosticableTreeMixin implements MultiLine<T> {
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) {
     return multiLine(failedValue);
   }
@@ -830,6 +857,7 @@ class _$MultiLine<T> with DiagnosticableTreeMixin implements MultiLine<T> {
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) {
     if (multiLine != null) {
@@ -847,6 +875,7 @@ class _$MultiLine<T> with DiagnosticableTreeMixin implements MultiLine<T> {
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) {
     return multiLine(this);
   }
@@ -860,6 +889,7 @@ class _$MultiLine<T> with DiagnosticableTreeMixin implements MultiLine<T> {
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) {
     if (multiLine != null) {
@@ -962,6 +992,7 @@ class _$NotAGrade<T> with DiagnosticableTreeMixin implements NotAGrade<T> {
     required TResult Function(T failedValue, int max) textTooLong,
     required TResult Function(T failedValue) multiLine,
     required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
   }) {
     return notAGrade(failedValue);
   }
@@ -975,6 +1006,7 @@ class _$NotAGrade<T> with DiagnosticableTreeMixin implements NotAGrade<T> {
     TResult Function(T failedValue, int max)? textTooLong,
     TResult Function(T failedValue)? multiLine,
     TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
     required TResult orElse(),
   }) {
     if (notAGrade != null) {
@@ -992,6 +1024,7 @@ class _$NotAGrade<T> with DiagnosticableTreeMixin implements NotAGrade<T> {
     required TResult Function(TextToLong<T> value) textTooLong,
     required TResult Function(MultiLine<T> value) multiLine,
     required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
   }) {
     return notAGrade(this);
   }
@@ -1005,6 +1038,7 @@ class _$NotAGrade<T> with DiagnosticableTreeMixin implements NotAGrade<T> {
     TResult Function(TextToLong<T> value)? textTooLong,
     TResult Function(MultiLine<T> value)? multiLine,
     TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
     required TResult orElse(),
   }) {
     if (notAGrade != null) {
@@ -1022,6 +1056,154 @@ abstract class NotAGrade<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   $NotAGradeCopyWith<T, NotAGrade<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotAnUrlCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $NotAnUrlCopyWith(
+          NotAnUrl<T> value, $Res Function(NotAnUrl<T>) then) =
+      _$NotAnUrlCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$NotAnUrlCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $NotAnUrlCopyWith<T, $Res> {
+  _$NotAnUrlCopyWithImpl(NotAnUrl<T> _value, $Res Function(NotAnUrl<T>) _then)
+      : super(_value, (v) => _then(v as NotAnUrl<T>));
+
+  @override
+  NotAnUrl<T> get _value => super._value as NotAnUrl<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(NotAnUrl<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NotAnUrl<T> with DiagnosticableTreeMixin implements NotAnUrl<T> {
+  const _$NotAnUrl({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.notAnUrl(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.notAnUrl'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is NotAnUrl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $NotAnUrlCopyWith<T, NotAnUrl<T>> get copyWith =>
+      _$NotAnUrlCopyWithImpl<T, NotAnUrl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue, int max) textTooLong,
+    required TResult Function(T failedValue) multiLine,
+    required TResult Function(T failedValue) notAGrade,
+    required TResult Function(T failedValue) notAnUrl,
+  }) {
+    return notAnUrl(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? textTooLong,
+    TResult Function(T failedValue)? multiLine,
+    TResult Function(T failedValue)? notAGrade,
+    TResult Function(T failedValue)? notAnUrl,
+    required TResult orElse(),
+  }) {
+    if (notAnUrl != null) {
+      return notAnUrl(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(TextToLong<T> value) textTooLong,
+    required TResult Function(MultiLine<T> value) multiLine,
+    required TResult Function(NotAGrade<T> value) notAGrade,
+    required TResult Function(NotAnUrl<T> value) notAnUrl,
+  }) {
+    return notAnUrl(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TextToLong<T> value)? textTooLong,
+    TResult Function(MultiLine<T> value)? multiLine,
+    TResult Function(NotAGrade<T> value)? notAGrade,
+    TResult Function(NotAnUrl<T> value)? notAnUrl,
+    required TResult orElse(),
+  }) {
+    if (notAnUrl != null) {
+      return notAnUrl(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotAnUrl<T> implements ValueFailure<T> {
+  const factory NotAnUrl({required T failedValue}) = _$NotAnUrl<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $NotAnUrlCopyWith<T, NotAnUrl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

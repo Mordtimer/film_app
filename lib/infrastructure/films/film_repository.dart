@@ -26,7 +26,7 @@ class FilmReposiory implements IFilmRepository {
       if (e.message!.contains('premission_denied'))
         return left(const FilmFailure.insufficientPremission());
       else {
-        return left(const FilmFailure.unexpected());
+        return left(FilmFailure.unexpected(object: e));
       }
     }
   }
@@ -45,7 +45,7 @@ class FilmReposiory implements IFilmRepository {
       else if (e.message!.contains('premission_denied')) {
         return left(const FilmFailure.notFound());
       } else {
-        return left(const FilmFailure.unexpected());
+        return left(FilmFailure.unexpected(object: e));
       }
     }
   }
@@ -64,7 +64,7 @@ class FilmReposiory implements IFilmRepository {
       else if (e.message!.contains('premission_denied')) {
         return left(const FilmFailure.notFound());
       } else {
-        return left(const FilmFailure.unexpected());
+        return left(FilmFailure.unexpected(object: e));
       }
     }
   }
@@ -88,7 +88,8 @@ class FilmReposiory implements IFilmRepository {
           error.message!.contains('premission-denided')) {
         return left(FilmFailure.insufficientPremission());
       } else {
-        return left(const FilmFailure.unexpected());
+      
+        return left(FilmFailure.unexpected(object: error));
       }
     });
   }

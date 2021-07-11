@@ -2,12 +2,14 @@ import 'package:films_app/application/auth/sign_in_form/auth_bloc/auth_bloc.dart
 import 'package:films_app/application/films/film_actor/film_actor_bloc.dart';
 import 'package:films_app/application/films/film_watcher/film_watcher_bloc.dart';
 import 'package:films_app/presentation/pages/films_overview.dart';
+import 'package:films_app/presentation/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../injection.dart';
 
 class UserFilmPage extends StatelessWidget {
+  static const routeName = '/filmspage';
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -22,7 +24,7 @@ class UserFilmPage extends StatelessWidget {
           BlocListener<AuthBloc, AuthState>(
             listener: (context, state) => state.maybeMap(
                 unauthenticated: (_) => Navigator.pushNamedAndRemoveUntil(
-                    context, '/login', (route) => false),
+                    context, SignInPage.routeName, (route) => false),
                 orElse: () {}),
           ),
           BlocListener<FilmActorBloc, FilmActorState>(

@@ -8,13 +8,15 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidEmail({
     required T failedValue,
   }) = InvalidEmail<T>;
+  
   const factory ValueFailure.invalidPassword({
     required T failedValue,
   }) = InvalidPassword<T>;
+  
   const factory ValueFailure.empty({
     required T failedValue,
   }) = Empty<T>;
-  
+
   const factory ValueFailure.textTooLong({
     required T failedValue,
     required int max,
@@ -24,9 +26,13 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = MultiLine<T>;
 
-    const factory ValueFailure.notAGrade({
+  const factory ValueFailure.notAGrade({
     required T failedValue,
   }) = NotAGrade<T>;
+
+  const factory ValueFailure.notAnUrl({
+    required T failedValue,
+  }) = NotAnUrl<T>;
 }
 
 @freezed

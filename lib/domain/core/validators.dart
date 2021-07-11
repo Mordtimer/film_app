@@ -41,7 +41,7 @@ Either<ValueFailure<String>, String> validateMultiLine(String input) {
   if (input.contains('\n')){
     return right(input);
   } else {
-    return left(ValueFailure.multiLine(failedValue: input));
+    return right(input);
   }
 }
 
@@ -50,5 +50,14 @@ Either<ValueFailure<String>, String> validateIsGrade(String input) {
     return right(input);
   } else {
     return left(ValueFailure.notAGrade(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateIsUrl(String input) {
+  RegExp exp = RegExp(r'(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+');
+  if (exp.hasMatch(input)){
+    return right(input);
+  } else {
+    return left(ValueFailure.notAnUrl(failedValue: input));
   }
 }

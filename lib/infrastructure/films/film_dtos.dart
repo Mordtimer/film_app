@@ -3,6 +3,7 @@ import 'package:films_app/domain/auth/unique_id.dart';
 import 'package:films_app/domain/films/film.dart';
 import 'package:films_app/domain/films/film_desc.dart';
 import 'package:films_app/domain/films/film_grade.dart';
+import 'package:films_app/domain/films/film_img_url.dart';
 import 'package:films_app/domain/films/film_title.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'film_dtos.freezed.dart';
@@ -16,6 +17,7 @@ class FilmItemDto with _$FilmItemDto {
     required String title,
     required String grade,
     required String description,
+    required String url
   }) = _FilmItemDto;
 
   factory FilmItemDto.fromDomain(Film film) {
@@ -23,7 +25,8 @@ class FilmItemDto with _$FilmItemDto {
         id: film.id.getOrCrash(),
         title: film.title.getOrCrash(),
         grade: film.grade.getOrCrash(),
-        description: film.description.getOrCrash());
+        description: film.description.getOrCrash(),
+        url: film.url.getOrCrash());
   }
 
   factory FilmItemDto.fromJson(Map<String, dynamic> json) =>
@@ -41,6 +44,7 @@ extension FilmItemDtoX on FilmItemDto {
         id: UniqueId.fromUniqueString(id),
         title: FilmTitle(title),
         description: FilmDesc(description),
-        grade: FilmGrade(grade));
+        grade: FilmGrade(grade),
+        url: FilmImgUrl(url));
   }
 }

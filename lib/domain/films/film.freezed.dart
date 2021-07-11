@@ -20,12 +20,14 @@ class _$FilmTearOff {
       {required UniqueId id,
       required FilmTitle title,
       required FilmDesc description,
-      required FilmGrade grade}) {
+      required FilmGrade grade,
+      required FilmImgUrl url}) {
     return _Film(
       id: id,
       title: title,
       description: description,
       grade: grade,
+      url: url,
     );
   }
 }
@@ -39,6 +41,7 @@ mixin _$Film {
   FilmTitle get title => throw _privateConstructorUsedError;
   FilmDesc get description => throw _privateConstructorUsedError;
   FilmGrade get grade => throw _privateConstructorUsedError;
+  FilmImgUrl get url => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FilmCopyWith<Film> get copyWith => throw _privateConstructorUsedError;
@@ -49,7 +52,11 @@ abstract class $FilmCopyWith<$Res> {
   factory $FilmCopyWith(Film value, $Res Function(Film) then) =
       _$FilmCopyWithImpl<$Res>;
   $Res call(
-      {UniqueId id, FilmTitle title, FilmDesc description, FilmGrade grade});
+      {UniqueId id,
+      FilmTitle title,
+      FilmDesc description,
+      FilmGrade grade,
+      FilmImgUrl url});
 }
 
 /// @nodoc
@@ -66,6 +73,7 @@ class _$FilmCopyWithImpl<$Res> implements $FilmCopyWith<$Res> {
     Object? title = freezed,
     Object? description = freezed,
     Object? grade = freezed,
+    Object? url = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -84,6 +92,10 @@ class _$FilmCopyWithImpl<$Res> implements $FilmCopyWith<$Res> {
           ? _value.grade
           : grade // ignore: cast_nullable_to_non_nullable
               as FilmGrade,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as FilmImgUrl,
     ));
   }
 }
@@ -94,7 +106,11 @@ abstract class _$FilmCopyWith<$Res> implements $FilmCopyWith<$Res> {
       __$FilmCopyWithImpl<$Res>;
   @override
   $Res call(
-      {UniqueId id, FilmTitle title, FilmDesc description, FilmGrade grade});
+      {UniqueId id,
+      FilmTitle title,
+      FilmDesc description,
+      FilmGrade grade,
+      FilmImgUrl url});
 }
 
 /// @nodoc
@@ -112,6 +128,7 @@ class __$FilmCopyWithImpl<$Res> extends _$FilmCopyWithImpl<$Res>
     Object? title = freezed,
     Object? description = freezed,
     Object? grade = freezed,
+    Object? url = freezed,
   }) {
     return _then(_Film(
       id: id == freezed
@@ -130,6 +147,10 @@ class __$FilmCopyWithImpl<$Res> extends _$FilmCopyWithImpl<$Res>
           ? _value.grade
           : grade // ignore: cast_nullable_to_non_nullable
               as FilmGrade,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as FilmImgUrl,
     ));
   }
 }
@@ -141,7 +162,8 @@ class _$_Film extends _Film with DiagnosticableTreeMixin {
       {required this.id,
       required this.title,
       required this.description,
-      required this.grade})
+      required this.grade,
+      required this.url})
       : super._();
 
   @override
@@ -152,10 +174,12 @@ class _$_Film extends _Film with DiagnosticableTreeMixin {
   final FilmDesc description;
   @override
   final FilmGrade grade;
+  @override
+  final FilmImgUrl url;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Film(id: $id, title: $title, description: $description, grade: $grade)';
+    return 'Film(id: $id, title: $title, description: $description, grade: $grade, url: $url)';
   }
 
   @override
@@ -166,7 +190,8 @@ class _$_Film extends _Film with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('grade', grade));
+      ..add(DiagnosticsProperty('grade', grade))
+      ..add(DiagnosticsProperty('url', url));
   }
 
   @override
@@ -181,7 +206,9 @@ class _$_Film extends _Film with DiagnosticableTreeMixin {
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
             (identical(other.grade, grade) ||
-                const DeepCollectionEquality().equals(other.grade, grade)));
+                const DeepCollectionEquality().equals(other.grade, grade)) &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)));
   }
 
   @override
@@ -190,7 +217,8 @@ class _$_Film extends _Film with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(grade);
+      const DeepCollectionEquality().hash(grade) ^
+      const DeepCollectionEquality().hash(url);
 
   @JsonKey(ignore: true)
   @override
@@ -203,7 +231,8 @@ abstract class _Film extends Film {
       {required UniqueId id,
       required FilmTitle title,
       required FilmDesc description,
-      required FilmGrade grade}) = _$_Film;
+      required FilmGrade grade,
+      required FilmImgUrl url}) = _$_Film;
   const _Film._() : super._();
 
   @override
@@ -214,6 +243,8 @@ abstract class _Film extends Film {
   FilmDesc get description => throw _privateConstructorUsedError;
   @override
   FilmGrade get grade => throw _privateConstructorUsedError;
+  @override
+  FilmImgUrl get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$FilmCopyWith<_Film> get copyWith => throw _privateConstructorUsedError;

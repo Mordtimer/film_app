@@ -12,6 +12,7 @@ _$_FilmItemDto _$_$_FilmItemDtoFromJson(Map<String, dynamic> json) {
     title: json['title'] as String,
     grade: json['grade'] as String,
     description: json['description'] as String,
+    url: json['url'] as String,
   );
 }
 
@@ -21,4 +22,5 @@ Map<String, dynamic> _$_$_FilmItemDtoToJson(_$_FilmItemDto instance) =>
       'title': instance.title,
       'grade': instance.grade,
       'description': instance.description,
+      'url': instance.url,
     };
