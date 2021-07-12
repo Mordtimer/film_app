@@ -13,7 +13,7 @@ class FilmGrade extends ValueObject<String> {
     return FilmGrade._(validateMaxStringLength(input, maxLen).flatMap(validateEmptiness));
   }
 
-  String get getStrOrCrash => value.fold((f) => throw UnexpectedValueError(f), (r) => '⭐${r}/10');
+  String get getStrOrCrash => value.fold((f) => throw UnexpectedValueError(f), (r) => '${r}/10 ⭐');
 
   const FilmGrade._(this.value);
 }

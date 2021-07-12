@@ -17,7 +17,8 @@ class FilmItemDto with _$FilmItemDto {
     required String title,
     required String grade,
     required String description,
-    required String url
+    required String url,
+    required bool isWatched
   }) = _FilmItemDto;
 
   factory FilmItemDto.fromDomain(Film film) {
@@ -26,8 +27,11 @@ class FilmItemDto with _$FilmItemDto {
         title: film.title.getOrCrash(),
         grade: film.grade.getOrCrash(),
         description: film.description.getOrCrash(),
-        url: film.url.getOrCrash());
+        url: film.url.getOrCrash(),
+        isWatched: film.isWatched);
   }
+
+  
 
   factory FilmItemDto.fromJson(Map<String, dynamic> json) =>
       _$FilmItemDtoFromJson(json);
@@ -41,10 +45,11 @@ class FilmItemDto with _$FilmItemDto {
 extension FilmItemDtoX on FilmItemDto {
   Film toDomain() {
     return Film(
-        id: UniqueId.fromUniqueString(id),
+        id: UniqueId.fromUniqueString(this.id),
         title: FilmTitle(title),
         description: FilmDesc(description),
         grade: FilmGrade(grade),
-        url: FilmImgUrl(url));
+        url: FilmImgUrl(url),
+        isWatched: isWatched);
   }
 }

@@ -40,6 +40,16 @@ class _$FilmFormEventTearOff {
     );
   }
 
+  _IsWatchedChanged isWatchedChanged() {
+    return const _IsWatchedChanged();
+  }
+
+  _UrlChanged urlChanged(String url) {
+    return _UrlChanged(
+      url,
+    );
+  }
+
   _Saved saved() {
     return const _Saved();
   }
@@ -56,6 +66,8 @@ mixin _$FilmFormEvent {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
     required TResult Function() saved,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +77,8 @@ mixin _$FilmFormEvent {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) =>
@@ -75,6 +89,8 @@ mixin _$FilmFormEvent {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
     required TResult Function(_Saved value) saved,
   }) =>
       throw _privateConstructorUsedError;
@@ -84,6 +100,8 @@ mixin _$FilmFormEvent {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) =>
@@ -177,6 +195,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
     required TResult Function() saved,
   }) {
     return initialized(initialFilmOption);
@@ -189,6 +209,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -205,6 +227,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return initialized(this);
@@ -217,6 +241,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -305,6 +331,8 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
     required TResult Function() saved,
   }) {
     return titleChanged(title);
@@ -317,6 +345,8 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -333,6 +363,8 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return titleChanged(this);
@@ -345,6 +377,8 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -433,6 +467,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
     required TResult Function() saved,
   }) {
     return descriptionChanged(desc);
@@ -445,6 +481,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -461,6 +499,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return descriptionChanged(this);
@@ -473,6 +513,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -561,6 +603,8 @@ class _$_GradeChanged implements _GradeChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
     required TResult Function() saved,
   }) {
     return gradeChanged(grade);
@@ -573,6 +617,8 @@ class _$_GradeChanged implements _GradeChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -589,6 +635,8 @@ class _$_GradeChanged implements _GradeChanged {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return gradeChanged(this);
@@ -601,6 +649,8 @@ class _$_GradeChanged implements _GradeChanged {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -617,6 +667,247 @@ abstract class _GradeChanged implements FilmFormEvent {
   String get grade => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$GradeChangedCopyWith<_GradeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsWatchedChangedCopyWith<$Res> {
+  factory _$IsWatchedChangedCopyWith(
+          _IsWatchedChanged value, $Res Function(_IsWatchedChanged) then) =
+      __$IsWatchedChangedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$IsWatchedChangedCopyWithImpl<$Res>
+    extends _$FilmFormEventCopyWithImpl<$Res>
+    implements _$IsWatchedChangedCopyWith<$Res> {
+  __$IsWatchedChangedCopyWithImpl(
+      _IsWatchedChanged _value, $Res Function(_IsWatchedChanged) _then)
+      : super(_value, (v) => _then(v as _IsWatchedChanged));
+
+  @override
+  _IsWatchedChanged get _value => super._value as _IsWatchedChanged;
+}
+
+/// @nodoc
+
+class _$_IsWatchedChanged implements _IsWatchedChanged {
+  const _$_IsWatchedChanged();
+
+  @override
+  String toString() {
+    return 'FilmFormEvent.isWatchedChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _IsWatchedChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Film> initialFilmOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String desc) descriptionChanged,
+    required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
+    required TResult Function() saved,
+  }) {
+    return isWatchedChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Film> initialFilmOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String desc)? descriptionChanged,
+    TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (isWatchedChanged != null) {
+      return isWatchedChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return isWatchedChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (isWatchedChanged != null) {
+      return isWatchedChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsWatchedChanged implements FilmFormEvent {
+  const factory _IsWatchedChanged() = _$_IsWatchedChanged;
+}
+
+/// @nodoc
+abstract class _$UrlChangedCopyWith<$Res> {
+  factory _$UrlChangedCopyWith(
+          _UrlChanged value, $Res Function(_UrlChanged) then) =
+      __$UrlChangedCopyWithImpl<$Res>;
+  $Res call({String url});
+}
+
+/// @nodoc
+class __$UrlChangedCopyWithImpl<$Res> extends _$FilmFormEventCopyWithImpl<$Res>
+    implements _$UrlChangedCopyWith<$Res> {
+  __$UrlChangedCopyWithImpl(
+      _UrlChanged _value, $Res Function(_UrlChanged) _then)
+      : super(_value, (v) => _then(v as _UrlChanged));
+
+  @override
+  _UrlChanged get _value => super._value as _UrlChanged;
+
+  @override
+  $Res call({
+    Object? url = freezed,
+  }) {
+    return _then(_UrlChanged(
+      url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UrlChanged implements _UrlChanged {
+  const _$_UrlChanged(this.url);
+
+  @override
+  final String url;
+
+  @override
+  String toString() {
+    return 'FilmFormEvent.urlChanged(url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UrlChanged &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(url);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UrlChangedCopyWith<_UrlChanged> get copyWith =>
+      __$UrlChangedCopyWithImpl<_UrlChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Film> initialFilmOption) initialized,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String desc) descriptionChanged,
+    required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
+    required TResult Function() saved,
+  }) {
+    return urlChanged(url);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Film> initialFilmOption)? initialized,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String desc)? descriptionChanged,
+    TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (urlChanged != null) {
+      return urlChanged(url);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return urlChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (urlChanged != null) {
+      return urlChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UrlChanged implements FilmFormEvent {
+  const factory _UrlChanged(String url) = _$_UrlChanged;
+
+  String get url => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UrlChangedCopyWith<_UrlChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -661,6 +952,8 @@ class _$_Saved implements _Saved {
     required TResult Function(String title) titleChanged,
     required TResult Function(String desc) descriptionChanged,
     required TResult Function(String grade) gradeChanged,
+    required TResult Function() isWatchedChanged,
+    required TResult Function(String url) urlChanged,
     required TResult Function() saved,
   }) {
     return saved();
@@ -673,6 +966,8 @@ class _$_Saved implements _Saved {
     TResult Function(String title)? titleChanged,
     TResult Function(String desc)? descriptionChanged,
     TResult Function(String grade)? gradeChanged,
+    TResult Function()? isWatchedChanged,
+    TResult Function(String url)? urlChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -689,6 +984,8 @@ class _$_Saved implements _Saved {
     required TResult Function(_TitleChanged value) titleChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
     required TResult Function(_GradeChanged value) gradeChanged,
+    required TResult Function(_IsWatchedChanged value) isWatchedChanged,
+    required TResult Function(_UrlChanged value) urlChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return saved(this);
@@ -701,6 +998,8 @@ class _$_Saved implements _Saved {
     TResult Function(_TitleChanged value)? titleChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
     TResult Function(_GradeChanged value)? gradeChanged,
+    TResult Function(_IsWatchedChanged value)? isWatchedChanged,
+    TResult Function(_UrlChanged value)? urlChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {

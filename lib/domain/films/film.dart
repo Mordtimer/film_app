@@ -20,14 +20,23 @@ class Film with _$Film {
       required FilmTitle title,
       required FilmDesc description,
       required FilmGrade grade,
-      required FilmImgUrl url}) = _Film;
+      required FilmImgUrl url,
+      required bool isWatched}) = _Film;
 
   factory Film.newEmpty() => Film(
       description: FilmDesc(''),
       title: FilmTitle(''),
       grade: FilmGrade('5'),
       id: UniqueId(),
-      url: FilmImgUrl('https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png'));
+      url: FilmImgUrl('https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png'),
+      isWatched: false);
+
+  Option<bool> get isWatchedYet {
+    if (this.isWatched)
+      return Some(true);
+    else
+      return None();
+  }
 
   Option<ValueFailure<dynamic>> get failureOption {
     return title.failureOrUnit

@@ -14,24 +14,25 @@ class FilmsOverview extends StatelessWidget {
               const Center(child: CircularProgressIndicator()),
           loadSucces: (state) {
             return ListView.builder(
-              itemCount: state.films.length,
-              itemBuilder: (context, index) {
-              final film = state.films[index];
-              if (film.failureOption.isSome()) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.yellow,
-                    width: 200,
-                    height: 30,
-                  ),
-                );
-              } else {
-                return FilmCard(film: film);
-                
-              }
-            })
-            ;
+                itemCount: state.films.length,
+                itemBuilder: (context, index) {
+                  final film = state.films[index];
+                  if (film.failureOption.isSome()) {
+                    return Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Container(
+                        color: Colors.yellow,
+                        width: 200,
+                        height: 30,
+                      ),
+                    );
+                  } else {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: FilmCard(film: film),
+                    );
+                  }
+                });
           },
           loadFailure: (failure) => Container(
                 color: Colors.red,

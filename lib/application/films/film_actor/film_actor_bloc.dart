@@ -21,11 +21,11 @@ class FilmActorBloc extends Bloc<FilmActorEvent, FilmActorState> {
   Stream<FilmActorState> mapEventToState(
     FilmActorEvent event,
   ) async* {
-    event.map(deleted: (e) async* {
+    {
       yield const FilmActorState.actionInProgress();
       final possibleFailure = await _filmRepository.delete(event.film);
       yield possibleFailure.fold((l) => FilmActorState.deleteFailure(l),
           (_) => FilmActorState.deleteSucces());
-    });
+    };
   }
 }

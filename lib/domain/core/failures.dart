@@ -33,6 +33,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.notAnUrl({
     required T failedValue,
   }) = NotAnUrl<T>;
+
+ 
 }
 
 @freezed

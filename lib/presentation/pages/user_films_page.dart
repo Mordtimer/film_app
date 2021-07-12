@@ -1,7 +1,9 @@
+import 'package:dartz/dartz.dart';
 import 'package:films_app/application/auth/sign_in_form/auth_bloc/auth_bloc.dart';
 import 'package:films_app/application/films/film_actor/film_actor_bloc.dart';
 import 'package:films_app/application/films/film_watcher/film_watcher_bloc.dart';
-import 'package:films_app/presentation/pages/films_overview.dart';
+import 'package:films_app/presentation/widgets/films_overview.dart';
+import 'package:films_app/presentation/pages/fim_add.dart';
 import 'package:films_app/presentation/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,10 +37,11 @@ class UserFilmPage extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       duration: const Duration(seconds: 5),
                       content: Text(state.filmFailure.map(
-                          unexpected: (_) => 'Unexpected Error. Please contact app creator.',
+                          unexpected: (_) =>
+                              'Unexpected Error. Please contact app creator.',
                           insufficientPremission: (_) =>
                               'You have no premission to do this!',
-                          notFound: (_) => 'Note not found')),
+                          notFound: (_) => 'Film not found')),
                     ));
                   });
             },
@@ -47,16 +50,18 @@ class UserFilmPage extends StatelessWidget {
         child: Scaffold(
           body: FilmsOverview(),
           appBar: AppBar(
+            title: Center(child: Text('Your Library')),
             leading: IconButton(
                 icon: Icon(Icons.logout),
                 onPressed: () {
                   context.read<AuthBloc>().add(const AuthEvent.signedOut());
                 }),
+                actions: [IconButton(onPressed: (){}, icon: Icon(Icons.search))],
           ),
           floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
+            child: Icon(Icons.add), backgroundColor: Colors.green,
             onPressed: () {
-              //TODO navigate
+              Navigator.of(context).pushNamed(FilmAdd.routeName);
             },
           ),
         ),

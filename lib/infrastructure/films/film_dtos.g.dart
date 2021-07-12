@@ -13,6 +13,7 @@ _$_FilmItemDto _$_$_FilmItemDtoFromJson(Map<String, dynamic> json) {
     grade: json['grade'] as String,
     description: json['description'] as String,
     url: json['url'] as String,
+    isWatched: json['isWatched'] as bool,
   );
 }
 
@@ -23,4 +24,5 @@ Map<String, dynamic> _$_$_FilmItemDtoToJson(_$_FilmItemDto instance) =>
       'grade': instance.grade,
       'description': instance.description,
       'url': instance.url,
+      'isWatched': instance.isWatched,
     };

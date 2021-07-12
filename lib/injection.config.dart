@@ -13,11 +13,12 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'application/auth/sign_in_form/auth_bloc/auth_bloc.dart' as _i11;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i10;
 import 'application/films/film_actor/film_actor_bloc.dart' as _i12;
-import 'application/films/film_watcher/film_watcher_bloc.dart' as _i13;
+import 'application/films/film_form/film_form_bloc.dart' as _i13;
+import 'application/films/film_watcher/film_watcher_bloc.dart' as _i14;
 import 'domain/auth/i_auth_facade.dart' as _i6;
 import 'domain/films/i_film_repository.dart' as _i8;
 import 'infrastructure/auth/firabase_auth_facade.dart' as _i7;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i14;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i15;
 import 'infrastructure/films/film_repository.dart'
     as _i9; // ignore_for_file: unnecessary_lambdas
 
@@ -40,9 +41,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i11.AuthBloc>(() => _i11.AuthBloc(get<_i6.IAuthFacade>()));
   gh.factory<_i12.FilmActorBloc>(
       () => _i12.FilmActorBloc(get<_i8.IFilmRepository>()));
-  gh.factory<_i13.FilmWatcherBloc>(
-      () => _i13.FilmWatcherBloc(get<_i8.IFilmRepository>()));
+  gh.factory<_i13.FilmFormBloc>(
+      () => _i13.FilmFormBloc(get<_i8.IFilmRepository>()));
+  gh.factory<_i14.FilmWatcherBloc>(
+      () => _i14.FilmWatcherBloc(get<_i8.IFilmRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i14.RegisterModule {}
+class _$RegisterModule extends _i15.RegisterModule {}

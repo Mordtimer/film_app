@@ -16,6 +16,7 @@ part 'film_watcher_bloc.freezed.dart';
 class FilmWatcherBloc extends Bloc<FilmWatcherEvent, FilmWatcherState> {
   FilmWatcherBloc(this._filmRepository) : super(_Initial());
   final IFilmRepository _filmRepository;
+  // ignore: unused_field
   StreamSubscription<Either<FilmFailure, List<Film>>>? _filmStreamSubscribtion;
   @override
   Stream<FilmWatcherState> mapEventToState(

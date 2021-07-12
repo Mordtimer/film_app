@@ -25,13 +25,15 @@ class _$FilmItemDtoTearOff {
       required String title,
       required String grade,
       required String description,
-      required String url}) {
+      required String url,
+      required bool isWatched}) {
     return _FilmItemDto(
       id: id,
       title: title,
       grade: grade,
       description: description,
       url: url,
+      isWatched: isWatched,
     );
   }
 
@@ -50,6 +52,7 @@ mixin _$FilmItemDto {
   String get grade => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
+  bool get isWatched => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,7 +66,12 @@ abstract class $FilmItemDtoCopyWith<$Res> {
           FilmItemDto value, $Res Function(FilmItemDto) then) =
       _$FilmItemDtoCopyWithImpl<$Res>;
   $Res call(
-      {String id, String title, String grade, String description, String url});
+      {String id,
+      String title,
+      String grade,
+      String description,
+      String url,
+      bool isWatched});
 }
 
 /// @nodoc
@@ -81,6 +89,7 @@ class _$FilmItemDtoCopyWithImpl<$Res> implements $FilmItemDtoCopyWith<$Res> {
     Object? grade = freezed,
     Object? description = freezed,
     Object? url = freezed,
+    Object? isWatched = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -103,6 +112,10 @@ class _$FilmItemDtoCopyWithImpl<$Res> implements $FilmItemDtoCopyWith<$Res> {
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      isWatched: isWatched == freezed
+          ? _value.isWatched
+          : isWatched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -115,7 +128,12 @@ abstract class _$FilmItemDtoCopyWith<$Res>
       __$FilmItemDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String title, String grade, String description, String url});
+      {String id,
+      String title,
+      String grade,
+      String description,
+      String url,
+      bool isWatched});
 }
 
 /// @nodoc
@@ -135,6 +153,7 @@ class __$FilmItemDtoCopyWithImpl<$Res> extends _$FilmItemDtoCopyWithImpl<$Res>
     Object? grade = freezed,
     Object? description = freezed,
     Object? url = freezed,
+    Object? isWatched = freezed,
   }) {
     return _then(_FilmItemDto(
       id: id == freezed
@@ -157,6 +176,10 @@ class __$FilmItemDtoCopyWithImpl<$Res> extends _$FilmItemDtoCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      isWatched: isWatched == freezed
+          ? _value.isWatched
+          : isWatched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -169,7 +192,8 @@ class _$_FilmItemDto implements _FilmItemDto {
       required this.title,
       required this.grade,
       required this.description,
-      required this.url});
+      required this.url,
+      required this.isWatched});
 
   factory _$_FilmItemDto.fromJson(Map<String, dynamic> json) =>
       _$_$_FilmItemDtoFromJson(json);
@@ -184,10 +208,12 @@ class _$_FilmItemDto implements _FilmItemDto {
   final String description;
   @override
   final String url;
+  @override
+  final bool isWatched;
 
   @override
   String toString() {
-    return 'FilmItemDto(id: $id, title: $title, grade: $grade, description: $description, url: $url)';
+    return 'FilmItemDto(id: $id, title: $title, grade: $grade, description: $description, url: $url, isWatched: $isWatched)';
   }
 
   @override
@@ -204,7 +230,10 @@ class _$_FilmItemDto implements _FilmItemDto {
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
             (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
+                const DeepCollectionEquality().equals(other.url, url)) &&
+            (identical(other.isWatched, isWatched) ||
+                const DeepCollectionEquality()
+                    .equals(other.isWatched, isWatched)));
   }
 
   @override
@@ -214,7 +243,8 @@ class _$_FilmItemDto implements _FilmItemDto {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(grade) ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(url);
+      const DeepCollectionEquality().hash(url) ^
+      const DeepCollectionEquality().hash(isWatched);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +263,8 @@ abstract class _FilmItemDto implements FilmItemDto {
       required String title,
       required String grade,
       required String description,
-      required String url}) = _$_FilmItemDto;
+      required String url,
+      required bool isWatched}) = _$_FilmItemDto;
 
   factory _FilmItemDto.fromJson(Map<String, dynamic> json) =
       _$_FilmItemDto.fromJson;
@@ -248,6 +279,8 @@ abstract class _FilmItemDto implements FilmItemDto {
   String get description => throw _privateConstructorUsedError;
   @override
   String get url => throw _privateConstructorUsedError;
+  @override
+  bool get isWatched => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$FilmItemDtoCopyWith<_FilmItemDto> get copyWith =>

@@ -12,6 +12,10 @@ abstract class ValueObject<T> {
 
   bool isValid() => value.isRight();
 
+  String getOtInitial(){
+    return value.fold((f) => 'throw UnexpectedValueError(f)', (r) => r.toString());
+  }
+  
   T getOrCrash(){
     return value.fold((f) => throw UnexpectedValueError(f), (r) => r);
   }
